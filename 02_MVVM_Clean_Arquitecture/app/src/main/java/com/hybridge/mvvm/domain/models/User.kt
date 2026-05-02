@@ -1,4 +1,3 @@
 package com.hybridge.mvvm.domain.models
 
-class User {
-}
+data class User(val name: String, edad: Int)

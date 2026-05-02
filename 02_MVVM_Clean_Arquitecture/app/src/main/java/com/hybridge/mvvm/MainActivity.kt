@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.hybridge.mvvm.ui.UserVierModel
 import com.hybridge.mvvm.ui.theme.MVVMTheme
@@ -23,10 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MVVMTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MyScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -43,14 +41,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MyScreen(viewModel: UserVierModel = viewModel()){
-    val name = viewModel.gerUserName()
-    Text(text = "Hola, $name")
+    val user = viewModel.getUser()
+    Text(text = "Hola, ${user.name}")
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MyScreenPreview() {
     MVVMTheme {
-        Greeting("Android")
+        MyScreen()
     }
 }

@@ -1,8 +1,11 @@
 package com.hybridge.mvvm.ui
 
+import androidx.lifecycle.ViewModel
 import com.hybridge.mvvm.data.UserRepository
+import com.hybridge.mvvm.domain.models.User
+import com.hybridge.mvvm.domain.usecase.GetUserUseCase
 
-class UserVierModel {
-    private val userRepository = UserRepository()
-    fun getUserName(): String = userRepository.getUserName()
+class UserVierModel: ViewModel() {
+    private val getUserUseCase = GetUserUseCase(repository = UserRepository())
+    fun getUser(): User = getUserUseCase.execute()
 }
