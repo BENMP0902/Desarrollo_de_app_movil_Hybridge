@@ -11,9 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.lifecycle.viewmodel.viewModelFactory
 import com.hybridge.mvvm.ui.UserVierModel
 import com.hybridge.mvvm.ui.theme.MVVMTheme
 
@@ -42,13 +40,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun MyScreen(viewModel: UserVierModel = viewModel()){
     val user = viewModel.getUser()
-    Text(text = "Hola, ${user.name}")
+    MyScreenContent(name = user.name)
+}
+
+@Composable
+fun MyScreenContent(name: String, modifier: Modifier = Modifier) {
+    Text(text = "Hola, $name", modifier = modifier)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun MyScreenPreview() {
     MVVMTheme {
-        MyScreen()
+        MyScreenContent(name = "David")
     }
 }
