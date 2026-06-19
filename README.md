@@ -6,7 +6,8 @@ Repositorio académico para la materia de Desarrollo de Aplicaciones Móviles.
 ## Estructura del repositorio
 
 - `01_Hello_World/` — Primera app Android con Jetpack Compose
-- `02_MVVM_Clean_Architecture/` — Arquitectura MVVM y Clean Architecture
+- `02_MVVM_Clean_Arquitecture/` — Arquitectura MVVM y Clean Architecture
+- `03_My_Pizza_App/` — Aplicación de práctica con MVVM (Pizza del día)
 
 ## Stack tecnológico
 
@@ -14,6 +15,13 @@ Repositorio académico para la materia de Desarrollo de Aplicaciones Móviles.
 - **UI Framework:** Jetpack Compose (Material3)
 - **IDE:** Android Studio
 - **Arquitectura:** MVVM + Clean Architecture
+- **Control de versiones:** Git/GitHub
+
+## Temas cubiertos
+
+1. Introducción al desarrollo móvil, Jetpack Compose, Activity Lifecycle, Git/GitHub
+2. Patrón MVVM, Clean Architecture (Domain, Data, Presentation), UseCases
+3. Aplicación práctica integrando ViewModel, UseCase y Repository
 
 ## Autor
 
