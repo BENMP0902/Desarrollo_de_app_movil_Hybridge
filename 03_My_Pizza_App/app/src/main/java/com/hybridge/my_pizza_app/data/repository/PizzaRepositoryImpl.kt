@@ -1,13 +1,22 @@
 package com.hybridge.my_pizza_app.data.repository
 
+import com.hybridge.my_pizza_app.R
 import com.hybridge.my_pizza_app.domain.model.Pizza
 import com.hybridge.my_pizza_app.domain.repository.PizzaRepository
 
-class PizzaRepositoryImpl: PizzaRepository {
-    override fun getPizzaOfTheDay(): Pizza {
-        // Aqui deberia llegar la pizza desde la API o DB pero esta hardcodeada
-        println("Obteniendo pizza desde el servidor...")
-        return Pizza(type = "Pepperoni", size = "Grande", price = 180.00 )
+class PizzaRepositoryImpl : PizzaRepository {
+    private val pizzas = listOf(
+        Pizza("Pepperoni", 180.0, R.drawable.pepperoni),
+        Pizza("Hawaiana", 160.0, R.drawable.hawaiana),
+        Pizza("Mexicana", 190.0, R.drawable.mexicana)
+    )
+    private var lastPizza: Pizza? = null //variable que guarda la pizza en memoria
 
+    override fun getPizzaOfTheDay(): Pizza {
+        var pizza: Pizza
+        do {
+            pizza = pizzas.random()
+        } while (pizza == lastPizza && pizzas.size > 1)
+        return pizza
     }
 }
