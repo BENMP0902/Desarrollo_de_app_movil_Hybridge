@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
+/***  Probando acomodo de UI en filas y columnas
+
 @Composable
 fun PizzaScreen(viewModel: PizzaViewModel = viewModel()) {
     val pizza = viewModel.pizzaState
@@ -85,3 +87,5 @@ fun PizzaScreen(viewModel: PizzaViewModel = viewModel()) {
         }
     }
 }
+
+ */
